@@ -5,7 +5,7 @@ using System;
 /// This is the namespace "HelloWorld", which is used to organize classes
 /// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/namespaces/"/>
 /// </summary>
-namespace HelloWorld
+namespace Programm
 {
     /// <summary>
     /// C# is an object-oriented programming language.
@@ -23,9 +23,22 @@ namespace HelloWorld
         /// <param name="args">Optional command arguments</param>
         static void Main(string[] args)
         {
+            Mensch person1 = new Mensch();
             // Console is a class in the namespace "System" and has the method called "WriteLine"
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Test");
+            Console.WriteLine("Bitte gib deinen Namen ein:");
+            person1.Name = Console.ReadLine();
+
+            Console.WriteLine("Bitte gib dein Gewicht in [kg] ein:");
+            double.TryParse(Console.ReadLine(), out double gewicht);
+
+            Console.WriteLine("Bitte gib deine Groesse in [cm] ein:");
+            double.TryParse(Console.ReadLine(), out double groesse);
+
+            person1.Gewicht = gewicht;
+            person1.Groesse = groesse;
+
+            Console.WriteLine("Hallo " + person1.Name.ToString() + " dein BMI ist: " + person1.bmiBerechnen().ToString());
+
         }
     }
 }
