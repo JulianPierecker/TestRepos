@@ -37,7 +37,7 @@ namespace Programm
             }
         }
 
-        public double bmiBerechnen()
+        public double BmiBerechnen()
         {
             double bmi = 0;
             bmi = gewicht / ((groesse / 100) * (groesse / 100));

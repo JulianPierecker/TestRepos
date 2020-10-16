@@ -23,6 +23,7 @@ namespace Programm
         /// <param name="args">Optional command arguments</param>
         static void Main(string[] args)
         {
+            string[,,,] array = new string[2,2,2,2];
             Mensch person1 = new Mensch();
             // Console is a class in the namespace "System" and has the method called "WriteLine"
             Console.WriteLine("Bitte gib deinen Namen ein:");
@@ -36,8 +37,8 @@ namespace Programm
 
             person1.Gewicht = gewicht;
             person1.Groesse = groesse;
-
-            Console.WriteLine("Hallo " + person1.Name.ToString() + " dein BMI ist: " + person1.bmiBerechnen().ToString());
+       
+            Console.WriteLine("Hallo " + person1.Name.ToString() + " dein BMI ist: " + person1.BmiBerechnen().ToString());
 
         }
     }
