@@ -14,6 +14,7 @@ namespace Programm
             get { return name; }
             set { name = value; }
         } 
+
         public double Groesse
         {
             get 
