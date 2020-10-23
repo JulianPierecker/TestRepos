@@ -4,9 +4,9 @@ using System.Text;
 
 namespace HelloWorld
 {
-    public class Parameter
+    public class SolveEquation
     {
-        public Parameter()
+        public SolveEquation()
         {
 
         }
@@ -16,6 +16,8 @@ namespace HelloWorld
         double a;
         double b;
         double c;
+        double solutionX1;
+        double solutionX2;
 
         public double A 
         {
@@ -50,8 +52,30 @@ namespace HelloWorld
                 c = value;
             }
         }
+        public double SolutionX1
+        {
+            get
+            {
+                return solutionX1;
+            }
+            set
+            {
+                solutionX1 = value;
+            }
+        }
+        public double SolutionX2
+        {
+            get
+            {
+                return solutionX2;
+            }
+            set
+            {
+                solutionX2 = value;
+            }
+        }
 
-        public bool EinlesenDerParameter()
+        public bool ReadInParameter()
         {
             int i = 0;
             bool convertOK = false;
@@ -67,34 +91,23 @@ namespace HelloWorld
                     if (i > 2) break;
                 }
             }
-            return true;
+            return convertOK;
         }
-        public bool LösenEinerQuadratischenGleichung()
+        public bool SolveQuadraticEquations()
         {
-            double x11 = 0;
-            double x12 = 0;
-            double x13 = 0;
-            double x14 = 0;
-            double x15 = 0;
-            double x16 = 0;
-            double x17 = 0;
-
             a = parameterABC[0];
             b = parameterABC[1];
             c = parameterABC[2];
 
-            x11 = 4 * a * c;
-            x12 = b * b;
-            x13 = Math.Sqrt(x11 + x12);
-
-            x14 = -b + x13;
-            x15 = -b - x13;
-            x16 = x14 / (2 * a);
-            x17 = x15 / (2 * a);
-
-            Console.WriteLine("X1 = {0}", x16);
-            Console.WriteLine("X2 = {0}", x17);
-
+            try
+            {
+                solutionX1 = ((-b) + Math.Sqrt((b * b) + (4 * a * c))) / (2 * a);
+                solutionX2 = ((-b) - Math.Sqrt((b * b) + (4 * a * c))) / (2 * a);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
             return true;
         }
     }

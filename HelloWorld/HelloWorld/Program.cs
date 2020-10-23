@@ -24,9 +24,20 @@ namespace Programm
         /// <param name="args">Optional command arguments</param>
         static void Main(string[] args)
         {
-            Parameter parameter = new Parameter();
-            parameter.EinlesenDerParameter();
-            parameter.LösenEinerQuadratischenGleichung();
+            SolveEquation parameter = new SolveEquation();
+            if (parameter.ReadInParameter())
+            {
+                Console.WriteLine("Die Eingabe der Parameter war erfolgreich!");
+            }
+            if (parameter.SolveQuadraticEquations())
+            {
+                Console.WriteLine("Das Ergebnis für X1 = {0} und für X2 = {0}", parameter.SolutionX1, parameter.SolutionX2);
+                Console.WriteLine("Die Berechnung war erfolgreich!");
+            }
+            else
+            {
+                Console.WriteLine("Die Berechnung war nicht erfolgreich!");
+            }
             Console.ReadKey();
         }
         
