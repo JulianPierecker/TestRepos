@@ -1,4 +1,5 @@
 ﻿// <see cref="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive"
+using HelloWorld;
 using System;
 
 /// <summary>
@@ -23,7 +24,11 @@ namespace Programm
         /// <param name="args">Optional command arguments</param>
         static void Main(string[] args)
         {
-
+            Parameter parameter = new Parameter();
+            parameter.EinlesenDerParameter();
+            parameter.LösenEinerQuadratischenGleichung();
+            Console.ReadKey();
         }
+        
     }
 }
