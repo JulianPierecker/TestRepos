@@ -91,7 +91,7 @@ namespace HelloWorld
                     if (i > 2) break;
                 }
             }
-            return convertOK;
+            return true;
         }
         public bool SolveQuadraticEquations()
         {
